@@ -9,15 +9,19 @@ function App() {
 
 
 
-  const searchLocation = (event) => {
+  const searchLocation = async (event) => {
     if (event.key === 'Enter') {
-      axios.get(url).then((response) => {
-        setData(response.data)
-        console.log(response.data)
-      })
-      setLocation('')
+      try {
+        const response = await axios.get(url);
+        setData(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error("Error fetching weather data:", error);
+      }
+      setLocation('');
     }
   }
+  
 
   return (
     <div className="app">
