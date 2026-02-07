@@ -5,11 +5,11 @@ import { Cloud, Stars } from '@react-three/drei';
 
 export const Sun = () => {
   return (
-    <group>
+    <group position={[6, 4, -5]}>
       <ambientLight intensity={0.5} />
-      <directionalLight position={[10, 10, 5]} intensity={1.5} />
-      <mesh position={[5, 5, -5]}>
-        <sphereGeometry args={[1.5, 32, 32]} />
+      <directionalLight position={[0, 0, 5]} intensity={1.5} />
+      <mesh>
+        <sphereGeometry args={[1.5, 64, 64]} />
         <meshStandardMaterial 
           color="#FDB813" 
           emissive="#FDB813"
@@ -22,16 +22,17 @@ export const Sun = () => {
 
 export const Moon = () => {
   return (
-    <group>
+    <group position={[6, 4, -5]}>
       <ambientLight intensity={0.2} />
-      <directionalLight position={[-10, 10, 5]} intensity={0.5} color="#b0c4de" />
+      <directionalLight position={[-5, 2, 5]} intensity={0.5} color="#b0c4de" />
       <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
-      <mesh position={[5, 5, -5]}>
-        <sphereGeometry args={[1, 32, 32]} />
+      <mesh rotation={[0, -0.5, 0]}>
+        <sphereGeometry args={[1.2, 64, 64]} />
         <meshStandardMaterial 
           color="#f4f6f0" 
-          emissive="#f4f6f0"
-          emissiveIntensity={0.5}
+          emissive="#444"
+          emissiveIntensity={0.1}
+          roughness={0.8}
         />
       </mesh>
     </group>
