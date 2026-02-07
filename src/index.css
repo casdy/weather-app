@@ -365,3 +365,93 @@ body {
     border-color: rgba(239, 68, 68, 0.3);
     color: #fca5a5;
 }
+
+/* --- Mobile Optimization --- */
+@media (max-width: 768px) {
+  .app {
+    padding: 1rem 0.5rem;
+    align-items: flex-start;
+  }
+
+  .container {
+    max-width: 100%;
+    gap: 1rem;
+  }
+
+  /* Typography Scaling */
+  .landing-title {
+    font-size: 2.5rem;
+  }
+  
+  .current-temp {
+    font-size: 4.5rem;
+    letter-spacing: -1px;
+  }
+  
+  .condition {
+    font-size: 1.2rem;
+  }
+  
+  .location-name {
+    font-size: 1.1rem;
+  }
+
+  /* Layout Adjustments */
+  .weather-card {
+    padding: 1.5rem;
+    border-radius: var(--radius-medium);
+  }
+  
+  .weather-main-info {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .weather-icon-container {
+    align-self: center;
+    margin-bottom: -1rem; /* Pull it closer to text if stacked */
+  }
+
+  .condition-icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr); /* Keep 2 cols, but smaller gap */
+    gap: 0.8rem;
+  }
+
+  .stat-item {
+    padding: 1rem;
+    border-radius: var(--radius-small);
+  }
+  
+  .stat-value {
+    font-size: 1.2rem;
+  }
+  
+  .search-input {
+    font-size: 1rem; /* Prevent iOS zoom */
+    padding: 1rem 1.2rem;
+  }
+
+  .forecast-section {
+    padding: 1.2rem;
+    border-radius: var(--radius-medium);
+  }
+}
+
+@media (max-width: 380px) {
+  .landing-title {
+      font-size: 2rem;
+  }
+  .current-temp {
+      font-size: 3.5rem;
+  }
+  .city-chip {
+      padding: 0.5rem 0.8rem;
+      font-size: 0.9rem;
+  }
+}
